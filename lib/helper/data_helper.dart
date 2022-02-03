@@ -35,7 +35,7 @@ class DataHelper {
         return 0;
 
       default:
-        return 1;
+        return 5;
     }
   }
 
