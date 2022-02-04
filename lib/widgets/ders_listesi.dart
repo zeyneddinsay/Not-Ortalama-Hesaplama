@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:not_ortalama_hesaplama/helper/data_helper.dart';
 import 'package:not_ortalama_hesaplama/model/ders.dart';
 
-class DersListe extends StatefulWidget {
+class DersListe extends StatelessWidget {
   final Function onElemanCikarildi;
   const DersListe({
     required this.onElemanCikarildi,
@@ -10,10 +10,8 @@ class DersListe extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<DersListe> createState() => _DersListeState();
-}
+  //State<DersListe> createState() => _DersListeState();
 
-class _DersListeState extends State<DersListe> {
   @override
   Widget build(BuildContext context) {
     List<Ders> tumDersler = DataHelper.tumEklenenDersler;
@@ -25,8 +23,7 @@ class _DersListeState extends State<DersListe> {
                 key: UniqueKey(),
                 direction: DismissDirection.startToEnd,
                 onDismissed: (a) {
-                  onElemanCikarildi:
-                  (index);
+                  onElemanCikarildi(index);
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
